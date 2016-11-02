@@ -18,7 +18,7 @@ addons:
 #sudo: false
 before_install:
 - sudo apt-get install gcc-multilib
-- export CC="gcc-4.4" CXX="gcc-multilib"
+- export CC="gcc-4.4" CXX="gcc"
 deploy:
   provider: releases
   api_key:
