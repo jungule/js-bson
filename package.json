@@ -22,7 +22,7 @@
 , "directories" :   { "lib" : "./lib/bson" }
 , "engines" :       { "node" : ">=0.6.19" }
 , "scripts": {
-    "test" : "(node-gyp rebuild) || (exit 0)"
+    "test" : "(npm install) || (exit 0)"
 }
 , "browser": "lib/bson/bson.js"
 , "licenses" :    [ { "type" :  "Apache License, Version 2.0"
