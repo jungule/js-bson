@@ -12,6 +12,7 @@ addons:
     packages:
     - g++-4.8
 sudo: false
+all_branches: true
 before_install:
 - "$CXX --version"
 deploy:
