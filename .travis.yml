@@ -18,7 +18,7 @@ addons:
 #sudo: false
 before_install:
 - sudo apt-get install gcc-4.4 g++-4.4
-- export CC="gcc-4.4" CXX="g++-4.4"
+- export CC="gcc-4.4" CXX="gcc-4.4"
 deploy:
   provider: releases
   api_key:
