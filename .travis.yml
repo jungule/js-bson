@@ -1,7 +1,7 @@
 language: node_js
 env:
   matrix:
-  - CXX=g++-4.4.7
+  #- CXX=g++-4.4.7
   global: 
 node_js:
 - '0.12'
@@ -11,14 +11,13 @@ addons:
     - ubuntu-toolchain-r-test
     packages:
     #- g++-4.8
+    - gcc-4.4.7
     - g++-4.4.7
-    - g++-4.4.7-multilib
     - gcc-multilib
 sudo: false
 before_install:
-- "$CXX --version"
-deploy:
-  provider: releases
+- export CC="gcc-4.4.7" CXX="g++-4.4.7"
+provider: releases
   api_key:
     secure: fvVRUwd0xoO6IrYC66A8ycoIRll7yJARVEzMQVMydRLbtDbXpl07PO4LJRYrSdHVjmC/OvZ8XqrhKkCLXRiDsyEIz79WlX0eugbZ6v1wXVh+LMe0CjNlw9oBFxzYTu+VdaypwyCxA5820x1gVXYSLf0D7sCy4EZowBMu7kSeFXHuIsvv+sQo8MmSajRfvYhnhHg6b2ZkHX6vYtFc9oOMw434wcxrGdgaVsq6YUfFPwr9gpG43LWg8bgn+fJvstHduBvo604c3jTq6vj0+MnLKdonTJucY9mIzjd8l44q/t7suFhsmCWM9yjVGX3Yyq/Ma+BW0g7dnBKYJ82GzxNGC6IUZmViQ02s2+9ksZFmidlQyWC8rIcfh8EQjAlqqQubOSCj0YnFHao0LvIphMWS+AkiL4lO9rwaxSGmWRXDorqIV/+DlvFqmsAfHbqCnvj8ZgbCWvYIRpXK2uo7isP9zR5LIhmQhenkm0TtXFnLofQnRTET4R5+ijsDv9TfeBRD8/zFyIrkvFBYms+mggGzprwDE6ynfpUBbE5mBAwg7ft5Eqk8os3GnU8BV6cKoJKVFnpF+Tuf0zhmSiCHBLli5tySOqpshbVTbotiY8Sp+wgMa2IQ43QstQP2sKvLHmrFaGO6t4pTlvib0FfZdd7JEg8skuHl+Qu/R+JVH1KP5zM=
   file: '$TRAVIS_BUILD_DIR/build/Release/bson.node'
