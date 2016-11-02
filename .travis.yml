@@ -12,7 +12,6 @@ addons:
     packages:
     - g++-4.8
 sudo: false
-all_branches: true
 before_install:
 - "$CXX --version"
 deploy:
@@ -22,5 +21,6 @@ deploy:
   file: '$TRAVIS_BUILD_DIR/build/Release/bson.node'
   skip_cleanup: true
   on:
+    all_branches: true
     tags: false
     repo: jungule/js-bson
