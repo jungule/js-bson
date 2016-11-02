@@ -11,12 +11,14 @@ addons:
     - ubuntu-toolchain-r-test
     packages:
     #- g++-4.8
-    - gcc-4.4.7
-    - g++-4.4.7
+    - gcc-4.4
+    - g++-4.4
     - gcc-multilib
-sudo: false
+
+#sudo: false
 before_install:
-- export CC="gcc-4.4.7" CXX="g++-4.4.7"
+- sudo apt-get install gcc-4.4 g++-4.4
+- export CC="gcc-4.4" CXX="g++-4.4"
 deploy:
   provider: releases
   api_key:
